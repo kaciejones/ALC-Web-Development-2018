@@ -1,3 +1,7 @@
+/* Stylesheet for Kacie's Floral Shop*/
+
+
+/* Global */
 body{
     background-color:antiquewhite;
     
@@ -55,3 +59,21 @@ nav ul li a:hover{
     background-color: deeppink;
 }
 
+nav .active{
+    background-color: mediumseagreen;
+}
+
+
+/* index.html style */
+
+#content h2{
+    float: left;
+    width: 100%;
+}
+
+#imgMain{
+    display: block;
+    width: 500px;
+    margin: 10px;
+    border: solid 2px pink;
+}
