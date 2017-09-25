@@ -3,22 +3,24 @@
 
 /* Global */
 body{
-    background-color:antiquewhite;
+    background-image: url('/images/floralprint.jpg');
+    
     
 }
 
 div#container{
     margin: auto;
     width: 1024px;
-    background-color: floralwhite;
+    background-color: #F4F4F2;
+    border: 5px solid #631B27;
 }
 
 header{
     display:block;
-    width: 100%;
+    width: auto;
     height: 150px;
-    border:2px solid pink;
-    background-color: lavenderblush;
+    border:2px solid #631B27;
+    background-color: #F9ACC0;
     margin: 0;
     padding:0;
 }
@@ -30,10 +32,11 @@ header h1{
 
 nav{
     float: left;
-    width: 100%;
-    background-color: lightgreen;
+    width: 1020px;
+    background-color: #587E45;
     margin: 0;
     padding: 0;
+    border: 2px solid #631B27;
 }
 
 nav ul{
@@ -56,24 +59,54 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    background-color: deeppink;
+    background-color: #631B27;
 }
 
 nav .active{
-    background-color: mediumseagreen;
+    background-color: #631B27;
+}
+
+#content{
+    width: 1020px;
+    clear:both;
+    border: 2px solid #631B27;
+}
+
+.keepOpen{
+    clear:both;
+}
+
+footer{
+    width:1020px;;
+    background-color: #587E45;
+    color: #fff;
+    text-align: center;
+    border: 2px solid #631B27;
 }
 
 
 /* index.html style */
 
-#content h2{
+#h2main{
     float: left;
-    width: 100%;
+    width: 450px;
+    margin-top: 20px;
+    margin-bottom: auto;
 }
 
 #imgMain{
     display: block;
     width: 500px;
-    margin: 10px;
-    border: solid 2px pink;
+    margin: 20px 10px;
+    border: solid 3px #631B27;
+    float:left;
+    
 }
+
+#pmain{
+    width: 450px;
+    float: left;
+    
+    
+}
+
