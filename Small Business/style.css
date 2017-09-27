@@ -27,7 +27,11 @@ header{
 
 header h1{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
+    font-family: 'Give You Glory', cursive;
+    font-size: 70px;
+    color: #F4F4F2;
+    text-shadow: 3px 4px #631B27;
 }
 
 nav{
@@ -37,6 +41,7 @@ nav{
     margin: 0;
     padding: 0;
     border: 2px solid #631B27;
+    font-family: 'Old Standard TT', serif;
 }
 
 nav ul{
@@ -82,6 +87,7 @@ footer{
     color: #fff;
     text-align: center;
     border: 2px solid #631B27;
+    font-family: 'Old Standard TT', serif;
 }
 
 
@@ -91,7 +97,9 @@ footer{
     float: left;
     width: 450px;
     margin-top: 20px;
+    margin-left: 3px;
     margin-bottom: auto;
+    font-family: 'Old Standard TT', serif;
 }
 
 #imgMain{
@@ -106,7 +114,24 @@ footer{
 #pmain{
     width: 450px;
     float: left;
-    
-    
+    margin-top: 5px;
+    margin-left: 3px;
+    font-family: 'Old Standard TT', serif;
 }
 
+
+/*about.html*/
+
+#imgabout{
+    display: block;
+    width: 500px;
+    margin: 20px 10px;
+    border: solid 3px #631b27;
+    float: left;
+}
+
+#h2about{
+    float: left;
+    font-family: 'Old Standard TT', serif;
+    width: 450px;
+}
