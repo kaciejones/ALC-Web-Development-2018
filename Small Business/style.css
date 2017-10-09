@@ -158,30 +158,9 @@ footer{
 
 #gallery{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-}
-
-#small{
-    display: flex;
-    flex-direction: column;
-}
-
-#small figure{
-    flex: 0 0 30%;
-}
-
-#medium{
-    display: flex;
-    flex-direction: row;
-}
-
-#big{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 figure{
@@ -202,4 +181,28 @@ figcaption{
     font-family: 'Old Standard TT', serif;
     text-align: center;
     margin-bottom: 10px;
+}
+
+/*contact.html*/
+#h2contact{
+    font-family: 'Old Standard TT', serif;
+    padding-top: 10px;
+    margin: auto 10px;
+}
+
+#contactform{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+form input{
+    font-family: 'Old Standard TT', serif;
+    margin-bottom: 5px;
+    width: 150px;
+}
+
+#send{
+    font-family: 'Old Standard TT', serif;
+    margin: 10px;
+    font-size: 15px;
 }
