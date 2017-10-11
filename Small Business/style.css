@@ -4,8 +4,6 @@
 /* Global */
 body{
     background-image: url('/images/floralprint.jpg');
-    
-    
 }
 
 div#container{
@@ -188,11 +186,15 @@ figcaption{
     font-family: 'Old Standard TT', serif;
     padding-top: 10px;
     margin: auto 10px;
+    float: left;
 }
 
 #contactform{
     margin-left: 10px;
     margin-top: 5px;
+    float: left;
+    clear: left;
+    margin-bottom: 50px;
 }
 
 form input{
@@ -201,8 +203,20 @@ form input{
     width: 150px;
 }
 
-#send{
+button#send{
     font-family: 'Old Standard TT', serif;
-    margin: 10px;
+    width: 75px;
     font-size: 15px;
+}
+
+#maph2{
+    font-family: 'Old Standard TT', serif;
+    padding-top: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+#map{
+    float: right;
+    margin-right: 10px;
 }
