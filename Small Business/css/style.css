@@ -3,7 +3,7 @@
 
 /* Global */
 body{
-    background-image: url('/images/floralprint.jpg');
+    background-image: url('../images/floralprint.jpg');
 }
 
 div#container{
