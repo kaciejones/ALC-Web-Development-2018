@@ -8,18 +8,25 @@
 
 <body>
     <script>
-//        alert("I am alerting you!");
-//        confirm("You want some of dis?");
-//        prompt("Whats your favorite cow?");
-        var pig = confirm("do you like bacon?");
+        document.write("<h1 style='color:red'>Adventure Game 1.0</h1>");
         
-        if(pig){
-            alert("I like bacon too!!!!!!!");
+        var playName = prompt("What is your name?");
+        
+        alert("Good to meet you " + playName +"!");
+        
+        var beginAdv = prompt("It's 5:00 a.m, just a typical day on the farm, and the alarm clock begins blaring. You groggily open your eyes and rollover to see your alarm clock. Do you.... open your eyes and get out of bed, or hit snooze and go back to sleep?").toLowerCase();
+        
+        if(beginAdv == "get out of bed"){
+            alert("You slowly sit up, stretch out your body, and you are now ready for the day!");
         }
+        
+        else if(biginAdv == "go back to sleep"){
+            
+        }
+        
         else{
-            alert("You should eat more bacon.... it is good.");
+            prompt("Did you want to... get out of bed, or go back to sleep?")
         }
-        
         
     </script>
 </body>
