@@ -14,18 +14,38 @@
         
         alert("Good to meet you " + playName +"!");
         
-        var beginAdv = prompt("It's 5:00 a.m, just a typical day on the farm, and the alarm clock begins blaring. You groggily open your eyes and rollover to see your alarm clock. Do you.... open your eyes and get out of bed, or hit snooze and go back to sleep?").toLowerCase();
+        var beginAdv = prompt("You awake from a nap beneath an old apple tree in a beautiful forest of green. There is a traveled path to the west. The dark forest to the east. A cave to the south. And misty mountains to the north. Which path do you take?").toLowerCase();
         
-        if(beginAdv == "get out of bed"){
-            alert("You slowly sit up, stretch out your body, and you are now ready for the day!");
+        if(beginAdv == "north"){
+            var north = prompt("");
         }
         
-        else if(biginAdv == "go back to sleep"){
+        else if(biginAdv == "east"){
+            var east = prompt("");
+        }
+        
+        else if(biginAdv == "south"){
+            var south = prompt("");
+        }
+        
+        else if(biginAdv == "west"){
+            var west = prompt("You begin your journey down the path. As you continue along, you come across a fork in the road. Both the left and the right appear safe, both surrounded by thick shrubbery. Which way do you go?").toLowerCase();
             
+            if(west == "right"){
+                var right = prompt()
+            }
+            
+            else if(west == "left"){
+                var left = prompt()
+            }
+            
+            else{
+                
+            }
         }
         
         else{
-            prompt("Did you want to... get out of bed, or go back to sleep?")
+            alert("I don't understand " + beginADV);
         }
         
     </script>
