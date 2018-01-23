@@ -8,44 +8,48 @@
 
 <body>
     <script>
-        document.write("<h1 style='color:red'>Adventure Game 1.0</h1>");
+        Start()
         
-        var playName = prompt("What is your name?");
-        
-        alert("Good to meet you " + playName +"!");
-        
-        var beginAdv = prompt("You awake from a nap beneath an old apple tree in a beautiful forest of green. There is a traveled path to the west. The dark forest to the east. A cave to the south. And misty mountains to the north. Which path do you take?").toLowerCase();
-        
-        if(beginAdv == "north"){
-            var north = prompt("");
-        }
-        
-        else if(biginAdv == "east"){
-            var east = prompt("");
-        }
-        
-        else if(biginAdv == "south"){
-            var south = prompt("");
-        }
-        
-        else if(biginAdv == "west"){
-            var west = prompt("You begin your journey down the path. As you continue along, you come across a fork in the road. Both the left and the right appear safe, both surrounded by thick shrubbery. Which way do you go?").toLowerCase();
+        function Start(){
             
-            if(west == "right"){
-                var right = prompt()
-            }
+            var playerName = prompt("What is your name?");
             
-            else if(west == "left"){
-                var left = prompt()
-            }
+            alert("Nice to meet you " + playerName + "! Welcome to the land of This Place!");
             
-            else{
+            var startGame = confirm("Are you ready to begin your adventure?");
                 
-            }
+                if(startGame){
+                    Farm();
+                }  
+                else{
+                    alert("Goodbye!");
+                }
         }
         
-        else{
-            alert("I don't understand " + beginADV);
+        function Farm(){
+            var farm = prompt("It's a beautiful day in the land of This Place. As you walk down a dirt road you begin see a farm emerging in the distance. You get closer and see a beatiful place with several buildings. Do you knock on the door and see who is home or go exploring the property?").toLowerCase();
+            
+            switch(farm){
+                case "knock"||"door"||"see who's home":
+                    Door();
+                break;
+                case "explore"||"go and explore":
+                    alert("An angry farmhand sees you trespassing on the property. He runs towards you waving his shotgun and screaming, and chases you off of the property.");
+                    GameOver();
+                break;
+                default:
+                    alert("I'm sorry, I don't understand " + farm);
+                    Farm();
+                break;
+            }
+        }
+                    
+        function Door(){
+        
+        }
+        
+        function GameOver(){
+            
         }
         
     </script>
