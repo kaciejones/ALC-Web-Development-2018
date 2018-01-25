@@ -8,11 +8,13 @@
 
 <body>
     <script>
+        var playerName = prompt("What is your name?");
+        var bread = 0;
         Start()
         
         function Start(){
             
-            var playerName = prompt("What is your name?");
+            /*var playerName = prompt("What is your name?");*/
             
             alert("Nice to meet you " + playerName + "! Welcome to the land of This Place!");
             
@@ -30,7 +32,7 @@
             var farm = prompt("It's a beautiful day in the land of This Place. As you walk down a dirt road you begin see a farm emerging in the distance. You get closer and see a beatiful place with several buildings. Do you knock on the door and see who is home or go exploring the property?").toLowerCase();
             
             switch(farm){
-                case "knock"||"door"||"see who's home":
+                case "knock"||"door"||"see who's home"||"knock on the door":
                     Door();
                 break;
                 case "explore"||"go and explore":
@@ -45,11 +47,61 @@
         }
                     
         function Door(){
+            var door = prompt("You walk up to the door and ring the doorbell. A kind old lady opens the door, and the smell of baking wafts through the doorway. She greets you with a warm smile. You share with her your name and she says 'Nice to meet you " + playerName + "! Would you like to come in? I just finished making some food!' Do you accept the invitation and go in, ask to see the farm, or scowl at the kind lady and walk away?").toLowerCase();
+            
+            switch(door){
+                case "go in"||"accept invitation"||"inside":
+                    alert("You walk in the house and smell the lovely aroma of fresh bread. You follow the kind lady through the kitchen and she hands you some bread for your journey home. You put it in your backpack, and the lady asks if you want to see the farm.");
+                    bread += 5;
+                    SeeFarm()
+                break;
+                case "ask to see the farm"||"farm"||"see the farm":
+                    alert("'Most definitely! I'll show you around'");
+                    SeeFarm();
+                break;
+                case "scowl"||"walk away"||"leave":
+                    alert("You scowl at the kind old lady for no reason, turn around, and walk away.");
+                    GameOver();
+                break;
+                default:
+                    alert("I'm sorry, I don't understand " + door);
+                    Door();
+                break;
+            }
+        }
         
+        function SeeFarm(){
+            var seeFarm = prompt("").toLowerCase();
+            
+            switch(door){
+                case "go in"||"accept invitation"||"inside":
+                    alert("");
+                    SeeFarm()
+                break;
+                case "ask to see the farm"||"farm"||"see the farm":
+                    alert("");
+                    SeeFarm();
+                break;
+                case "scowl"||"walk away"||"leave":
+                    alert("");
+                    GameOver();
+                break;
+                default:
+                    alert("I'm sorry, I don't understand " + seeFarm);
+                    SeeFarm();
+                break;
+            }
         }
         
         function GameOver(){
+            var gameOver = confirm(playerName + ", Would you like to play again?");
             
+            if(gameOver){
+                Farm();
+            }
+            else{
+                alert("Goodbye!");
+            }
         }
         
     </script>
