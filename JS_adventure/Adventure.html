@@ -9,7 +9,16 @@
 <body>
     <script>
         var playerName = prompt("What is your name?");
-        var bread = 0;
+        var inventory={
+            bread: 0,
+            eggs: 0,
+            goats: 0,
+            milk: 0,
+            hay: 0,
+            grain: 0,
+            money: 50, 
+        }
+
         Start()
         
         function Start(){
@@ -52,7 +61,7 @@
             switch(door){
                 case "go in"||"accept invitation"||"inside":
                     alert("You walk in the house and smell the lovely aroma of fresh bread. You follow the kind lady through the kitchen and she hands you some bread for your journey home. You put it in your backpack, and the lady asks if you want to see the farm.");
-                    bread += 5;
+                    inventory.bread += 5;
                     SeeFarm()
                 break;
                 case "ask to see the farm"||"farm"||"see the farm":
@@ -71,20 +80,49 @@
         }
         
         function SeeFarm(){
-            var seeFarm = prompt("").toLowerCase();
+            var seeFarm = prompt("The kind lady informs you that she loves giving tours of the farm! There are many things to see but where should we begin? We can go see the goats, pigs, chickens, cows, sheep, grain silo, or the hay barn").toLowerCase();
             
-            switch(door){
-                case "go in"||"accept invitation"||"inside":
+            switch(seeFarm){
+                case "goats"||"goat":
+                    alert("You walk in the goat pen and the tribe of goats runs toward you. You enjoy seeing the baby goats running and jumping around.");
+                    var goat = confirm("Would you like to buy a baby goat? They are $50!");
+                    if(goat==true && inventory.money>=50){
+                        inventory.goats ++;
+                        inventory.money -= 50;
+                        alert("You have $" +inventory.money + ".00 left");
+                        SeeFarm();
+                    }
+                    else if(goat==true && inventory.money<=50){
+                        alert("Sorry, you don't have enough money.");
+                        SeeFarm();
+                    }
+                    else{
+                        SeeFarm();
+                    }
+                break;
+                case "pigs"||"pig":
                     alert("");
                     SeeFarm()
                 break;
-                case "ask to see the farm"||"farm"||"see the farm":
-                    alert("");
-                    SeeFarm();
+                case "chickens"||"chicken":
+                    var chicken = alert("The hens have been busy, and the kind lady asks you to please help collect the eggs. She says you can take home howerver many you would like.");
+                    SeeFarm()
                 break;
-                case "scowl"||"walk away"||"leave":
+                case "cows"||"cow":
                     alert("");
-                    GameOver();
+                    SeeFarm()
+                break;
+                case "sheep":
+                    alert("");
+                    SeeFarm()
+                break;
+                case "silo"||"grain silo":
+                    alert("");
+                    SeeFarm()
+                break;
+                case "barn"||"hay barn":
+                    alert("");
+                    SeeFarm()
                 break;
                 default:
                     alert("I'm sorry, I don't understand " + seeFarm);
