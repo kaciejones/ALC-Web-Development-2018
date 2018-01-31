@@ -14,9 +14,8 @@
             eggs: 0,
             goats: 0,
             milk: 0,
-            hay: 0,
             grain: 0,
-            money: 50, 
+            money: 127, 
         }
 
         Start()
@@ -41,10 +40,10 @@
             var farm = prompt("It's a beautiful day in the land of This Place. As you walk down a dirt road you begin see a farm emerging in the distance. You get closer and see a beatiful place with several buildings. Do you knock on the door and see who is home or go exploring the property?").toLowerCase();
             
             switch(farm){
-                case "knock"||"door"||"see who's home"||"knock on the door":
+                case "knock":
                     Door();
                 break;
-                case "explore"||"go and explore":
+                case "explore":
                     alert("An angry farmhand sees you trespassing on the property. He runs towards you waving his shotgun and screaming, and chases you off of the property.");
                     GameOver();
                 break;
@@ -59,16 +58,16 @@
             var door = prompt("You walk up to the door and ring the doorbell. A kind old lady opens the door, and the smell of baking wafts through the doorway. She greets you with a warm smile. You share with her your name and she says 'Nice to meet you " + playerName + "! Would you like to come in? I just finished making some food!' Do you accept the invitation and go in, ask to see the farm, or scowl at the kind lady and walk away?").toLowerCase();
             
             switch(door){
-                case "go in"||"accept invitation"||"inside":
+                case "go in":
                     alert("You walk in the house and smell the lovely aroma of fresh bread. You follow the kind lady through the kitchen and she hands you some bread for your journey home. You put it in your backpack, and the lady asks if you want to see the farm.");
                     inventory.bread += 5;
                     SeeFarm()
                 break;
-                case "ask to see the farm"||"farm"||"see the farm":
+                case "see the farm":
                     alert("'Most definitely! I'll show you around'");
                     SeeFarm();
                 break;
-                case "scowl"||"walk away"||"leave":
+                case "leave":
                     alert("You scowl at the kind old lady for no reason, turn around, and walk away.");
                     GameOver();
                 break;
@@ -80,10 +79,10 @@
         }
         
         function SeeFarm(){
-            var seeFarm = prompt("The kind lady informs you that she loves giving tours of the farm! There are many things to see but where should we begin? We can go see the goats, pigs, chickens, cows, sheep, grain silo, or the hay barn").toLowerCase();
+            var seeFarm = prompt("The kind lady informs you that she loves giving tours of the farm! There are many things to see but where should we begin? We can go see the goats, pigs, chickens, cows, sheep, the barn or the grain silo? Or you can leave.").toLowerCase();
             
             switch(seeFarm){
-                case "goats"||"goat":
+                case "goats":
                     alert("You walk in the goat pen and the tribe of goats runs toward you. You enjoy seeing the baby goats running and jumping around.");
                     var goat = confirm("Would you like to buy a baby goat? They are $50!");
                     if(goat==true && inventory.money>=50){
@@ -100,29 +99,80 @@
                         SeeFarm();
                     }
                 break;
-                case "pigs"||"pig":
-                    alert("");
-                    SeeFarm()
+                case "pigs":
+                    alert("You walk over to the pig pen and they are rooting around looking for food. If you have grain you can feed them.");
+                    var pig = confirm("Do you want to feed the pigs?");
+                    if(pig==true && inventory.grain>=1){
+                        inventory.grain --;
+                        alert("You have " +inventory.grain + " buckets of grain left");
+                        SeeFarm();
+                    }
+                    else if(pig==true && inventory.grain<=1){
+                        alert("Sorry, you don't have any grain with you.");
+                        SeeFarm();
+                    }
+                    else{
+                        SeeFarm();
+                    }
                 break;
-                case "chickens"||"chicken":
-                    var chicken = alert("The hens have been busy, and the kind lady asks you to please help collect the eggs. She says you can take home howerver many you would like.");
-                    SeeFarm()
+                case "chickens":
+                    alert("It's time to collect eggs from the chicken coop. The kind lady tells you you can keep as many as you collect.");
+                    var chicken = confirm("Will you collect the eggs?");
+                    if(chicken){
+                        inventory.eggs += Math.floor(Math.random()*20);
+                        alert("You collected " +inventory.eggs + " eggs!");
+                        SeeFarm();
+                    }
+                    else{
+                        SeeFarm();
+                    }
                 break;
-                case "cows"||"cow":
-                    alert("");
-                    SeeFarm()
+                case "cows":
+                    alert("You head to the pasture and the cows come to visit you. These heifers have already been milked once today, but do you want to try milking them again?");
+                    var cow = confirm("Do you milk the cow?");
+                    if(cow){
+                        inventory.milk += 4;
+                        alert("You now have " +inventory.milk + " jars of milk!");
+                        SeeFarm();
+                    }
+                    else{
+                        SeeFarm();
+                    }
                 break;
                 case "sheep":
-                    alert("");
-                    SeeFarm()
+                    alert("You head over to see the sheep, but the pen is empty. You ask the kind lady where all the sheep are and she informs you that you just missed them. They were sent to market earlier that day.");
+                    SeeFarm();
                 break;
-                case "silo"||"grain silo":
-                    alert("");
-                    SeeFarm()
+                case "grain silo":
+                    alert("Next to the grain silo there is a stack of buckets. The kind lady tells you that this is the grain used to feed all of the animals on the farm!");
+                    var grain = confirm("If you collect a bucket of grain you can feed the pigs.");
+                    if(grain){
+                        inventory.grain ++;
+                        alert("You now have " +inventory.grain + " bucket(s) of grain.");
+                        SeeFarm();
+                    }
+                    else{
+                        SeeFarm();
+                    }
                 break;
-                case "barn"||"hay barn":
-                    alert("");
-                    SeeFarm()
+                case"barn":
+                    var outsideBarn = confirm("You walk over next to the big red barn. Do you want to go in?");
+                    if(outsideBarn){
+                        Barn();
+                    }
+                    else{
+                        SeeFarm();
+                    }
+                break;
+                case "leave":
+                    var confirmLeave= confirm("Are you sure you want to leave?");
+                    
+                    if(confirmLeave){
+                        GameOver();
+                    }
+                    else{
+                        SeeFarm();
+                    }
                 break;
                 default:
                     alert("I'm sorry, I don't understand " + seeFarm);
@@ -131,7 +181,13 @@
             }
         }
         
+        function Barn(){
+            
+            
+        }
+        
         function GameOver(){
+            alert("Before you leave you open up your backpack to see what you have. In your bag you find $" + inventory.money + ", " + inventory.bread + " loaves of bread, " + inventory.eggs + " eggs, and " + inventory.milk + " bottles of milk. You also have " + inventory.goats + " baby goats and " + inventory.grain + " buckets of grain. ")
             var gameOver = confirm(playerName + ", Would you like to play again?");
             
             if(gameOver){
