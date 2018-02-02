@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    <h1>Kacie's Javascript Game</h1>
     <script>
         var playerName = prompt("What is your name?");
         var inventory={
@@ -37,7 +38,7 @@
         }
         
         function Farm(){
-            var farm = prompt("It's a beautiful day in the land of This Place. As you walk down a dirt road you begin see a farm emerging in the distance. You get closer and see a beatiful place with several buildings. Do you knock on the door and see who is home or go exploring the property?").toLowerCase();
+            var farm = prompt("It's a beautiful day in the land of This Place. As you walk down a dirt road you begin to see a farm emerging in the distance. You get closer and see a beatiful place with several buildings. Do you knock on the door and see who is home or go exploring the property?").toLowerCase();
             
             switch(farm){
                 case "knock":
@@ -182,7 +183,42 @@
         }
         
         function Barn(){
+            var barn = prompt("You walk in the barn, and see a few different things. There is a loft full of hay, a few ducks over by the door, and a big John Deere tractor. Or you can leave the barn.").toLowerCase();
             
+            switch(barn){
+                case "loft":
+                    alert("You climb up the ladder and climb in the hay loft. As you crawl onto the hay you see a giant spider. You are deathly afraid of spiders so you climb down to ladder as fast as you can.");
+                    Barn();
+                break;
+                case "ducks":
+                    alert("The ducks are extremely friendly and come up to you.");
+                    var feed = confirm("Do you want to feed the ducks?");
+                    if(feed==true && inventory.bread>=1){
+                        alert("You break up the bread the kind lady gave you earlier and you feed the ducks. You now have a few new friends.")
+                        inventory.bread --;
+                        Barn();
+                    }
+                    else if(feed == true && inventory.bread<=1){
+                        alert("Sorry, you don't have any bread to feed the ducks.");
+                        Barn();
+                    }
+                    else{
+                        Barn();
+                    }
+                break;
+                case "tractor":
+                    alert("You walk over to the tractor and you see a cat sitting on the seat. He hisses at you and you become uncomfortable. You walk away.");
+                    Barn();
+                break;
+                case "leave":
+                    SeeFarm();
+                break;
+                default:
+                    alert("I'm sorry, I don't understand " + barn);
+                    Farm();
+                break;
+            
+            }
             
         }
         
