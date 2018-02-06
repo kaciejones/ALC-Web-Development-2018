@@ -9,8 +9,7 @@
 <body>
     <h1>Kacie's Javascript Game</h1>
     <script>
-        var playerName = prompt("What is your name?");
-        var inventory={
+        var inventory = {
             bread: 0,
             eggs: 0,
             goats: 0,
@@ -18,9 +17,15 @@
             grain: 0,
             money: 127, 
         }
-
-        Start()
         
+		var playerName = prompt("What is your name?");
+		if(playerName==null){
+			
+		}
+		else{
+			Start();
+		}
+		
         function Start(){
             
             /*var playerName = prompt("What is your name?");*/
@@ -38,7 +43,7 @@
         }
         
         function Farm(){
-            var farm = prompt("It's a beautiful day in the land of This Place. As you walk down a dirt road you begin to see a farm emerging in the distance. You get closer and see a beatiful place with several buildings. Do you knock on the door and see who is home or go exploring the property?").toLowerCase();
+            var farm = prompt("It's a beautiful day in the land of This Place. As you walk down a dirt road you begin to see a farm emerging in the distance. You get closer and see a beatiful place with several buildings. Do you knock on the door and see who is home or go explore the farm?").toLowerCase();
             
             switch(farm){
                 case "knock":
@@ -56,13 +61,15 @@
         }
                     
         function Door(){
-            var door = prompt("You walk up to the door and ring the doorbell. A kind old lady opens the door, and the smell of baking wafts through the doorway. She greets you with a warm smile. You share with her your name and she says 'Nice to meet you " + playerName + "! Would you like to come in? I just finished making some food!' Do you accept the invitation and go in, ask to see the farm, or scowl at the kind lady and walk away?").toLowerCase();
+            alert("You walk up to the door and ring the doorbell. A kind old lady opens the door, and the smell of bread baking in the oven wafts through the doorway. The kind lady greets you with a smile.");
+			
+			var door = prompt("The lady says 'Nice to meet you " + playerName + "! Would you like to come in? I'm just finishing some baking!' Do you accept the invitation and go in, ask to see the farm, or scowl at the kind lady and walk away?").toLowerCase();
             
             switch(door){
                 case "go in":
                     alert("You walk in the house and smell the lovely aroma of fresh bread. You follow the kind lady through the kitchen and she hands you some bread for your journey home. You put it in your backpack, and the lady asks if you want to see the farm.");
                     inventory.bread += 5;
-                    SeeFarm()
+                    SeeFarm();
                 break;
                 case "see the farm":
                     alert("'Most definitely! I'll show you around'");
@@ -70,6 +77,7 @@
                 break;
                 case "leave":
                     alert("You scowl at the kind old lady for no reason, turn around, and walk away.");
+					alert("As you walk away you can hear the old lady crying because you made her sad."); 
                     GameOver();
                 break;
                 default:
@@ -120,8 +128,9 @@
                     alert("It's time to collect eggs from the chicken coop. The kind lady tells you you can keep as many as you collect.");
                     var chicken = confirm("Will you collect the eggs?");
                     if(chicken){
-                        inventory.eggs += Math.floor(Math.random()*20);
-                        alert("You collected " +inventory.eggs + " eggs!");
+						var randomNum=Math.floor(Math.random()*20);
+                        inventory.eggs += randomNum;
+                        alert("You now have" + inventory.eggs + " eggs!");
                         SeeFarm();
                     }
                     else{
@@ -148,8 +157,8 @@
                     alert("Next to the grain silo there is a stack of buckets. The kind lady tells you that this is the grain used to feed all of the animals on the farm!");
                     var grain = confirm("If you collect a bucket of grain you can feed the pigs.");
                     if(grain){
-                        inventory.grain ++;
-                        alert("You now have " +inventory.grain + " bucket(s) of grain.");
+                        inventory.grain = 2;
+                        alert("You now have " +inventory.grain + " buckets of grain.");
                         SeeFarm();
                     }
                     else{
@@ -183,7 +192,7 @@
         }
         
         function Barn(){
-            var barn = prompt("You walk in the barn, and see a few different things. There is a loft full of hay, a few ducks over by the door, and a big John Deere tractor. Or you can leave the barn.").toLowerCase();
+            var barn = prompt("You walk in the barn, and see a few different things. There is a loft full of hay, a few ducks over by the door, and a big John Deere tractor. Or you can go outside.").toLowerCase();
             
             switch(barn){
                 case "loft":
@@ -210,7 +219,7 @@
                     alert("You walk over to the tractor and you see a cat sitting on the seat. He hisses at you and you become uncomfortable. You walk away.");
                     Barn();
                 break;
-                case "leave":
+                case "go outside":
                     SeeFarm();
                 break;
                 default:
@@ -223,11 +232,18 @@
         }
         
         function GameOver(){
-            alert("Before you leave you open up your backpack to see what you have. In your bag you find $" + inventory.money + ", " + inventory.bread + " loaves of bread, " + inventory.eggs + " eggs, and " + inventory.milk + " bottles of milk. You also have " + inventory.goats + " baby goats and " + inventory.grain + " buckets of grain. ")
+            alert("The nice old lady walks you out front so you can begin your journey home.");
+			alert("Before you leave you open up your backpack to see what you have. In your bag you find $" + inventory.money + ", " + inventory.bread + " loaves of bread, " + inventory.eggs + " eggs, and " + inventory.milk + " bottles of milk. You also have " + inventory.goats + " baby goats and " + inventory.grain + " buckets of grain. ");
             var gameOver = confirm(playerName + ", Would you like to play again?");
             
             if(gameOver){
                 Farm();
+				inventory.bread = 0;
+				inventory.eggs = 0;
+				inventory.goats = 0;
+				inventory.milk = 0;
+				inventory.grain = 0;
+				inventory.money = 127;
             }
             else{
                 alert("Goodbye!");
