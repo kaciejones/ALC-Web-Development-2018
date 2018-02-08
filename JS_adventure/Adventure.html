@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Adventure Game</title>
+	<link href = "style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"> 
 </head>
 
 <body>
@@ -50,8 +52,9 @@
                     Door();
                 break;
                 case "explore":
-                    alert("An angry farmhand sees you trespassing on the property. He runs towards you waving his shotgun and screaming, and chases you off of the property.");
-                    GameOver();
+                    /*alert("An angry farmhand sees you trespassing on the property. He runs towards you waving his shotgun and screaming, and chases you off of the property.");
+                    GameOver();*/
+					Tresspass();
                 break;
                 default:
                     alert("I'm sorry, I don't understand " + farm);
@@ -59,6 +62,39 @@
                 break;
             }
         }
+		
+		function Tresspass(){
+			var tresspass = prompt("You walk behind the house and see several animal pens, you see chickens, goats, cows, and pigs. Where do you go?").toLowerCase();
+			
+			switch(tresspass){
+				case "chickens":
+					alert("As you walk up to the chickens, they continue to peck at the ground, paying no attention to you.");
+					Tresspass();
+				break;
+				case "goats":
+					alert("You go in the goat pen to get a better view of the baby goats. As you approach them trying to pet them, the big billy goat comes up from behind and butts you in the back, knocking you over.");
+					Tresspass();
+				break;
+				case "cows":
+					alert("You head over to the field hoping to see a cow, but instead you step in a big cow pie. You ruin your new shoes.");
+					Tresspass();
+				break;
+				case "pigs":
+					alert("You walk over to the pig pen and see three large pigs. As you get closer, they start to make lots of noise so you get worried and go hide in the hay stack.");
+					HayStack();
+				break;
+				default:
+					alert("An angry farmhand sees you trespassing on the property. He runs towards you waving his shotgun and screaming, and chases you off of the property.");
+                    BadGameOver();
+				break;
+			}
+		}
+		
+		function HayStack(){
+			alert("As you climb around the haystack to try and avoid being caught, you see a pickup truck pull up full of hay.");
+			alert("The farmhand climbs out of the truck to stack the hay and sees you hiding. He begins to yell and chases you off of the farm.")
+			BadGameOver();
+		}
                     
         function Door(){
             alert("You walk up to the door and ring the doorbell. A kind old lady opens the door, and the smell of bread baking in the oven wafts through the doorway. The kind lady greets you with a smile.");
@@ -249,6 +285,19 @@
                 alert("Goodbye!");
             }
         }
+		
+		function BadGameOver(){
+			alert("You run off of the property and are never to be seen again.");
+			var badgameOver = confirm(playerName + ", Would you like to play again?");
+            
+            if(badgameOver){
+                Farm();
+				
+            }
+            else{
+                alert("Goodbye!");
+            }
+		}
         
     </script>
 </body>
