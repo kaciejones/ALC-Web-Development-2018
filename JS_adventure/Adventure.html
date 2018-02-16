@@ -92,7 +92,7 @@
 		
 		function HayStack(){
 			alert("As you climb around the haystack to try and avoid being caught, you see a pickup truck pull up full of hay.");
-			alert("The farmhand climbs out of the truck to stack the hay and sees you hiding. He begins to yell and chases you off of the farm.")
+			alert("The farmhand climbs out of the truck to stack the hay and sees you hiding. He begins to yell and he chases you off of the farm.")
 			BadGameOver();
 		}
                     
@@ -166,7 +166,7 @@
                     if(chicken){
 						var randomNum=Math.floor(Math.random()*20);
                         inventory.eggs += randomNum;
-                        alert("You now have" + inventory.eggs + " eggs!");
+                        alert("You now have " + inventory.eggs + " eggs!");
                         SeeFarm();
                     }
                     else{
@@ -260,7 +260,7 @@
                 break;
                 default:
                     alert("I'm sorry, I don't understand " + barn);
-                    Farm();
+                    Barn();
                 break;
             
             }
