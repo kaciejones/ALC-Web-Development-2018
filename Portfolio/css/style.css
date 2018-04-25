@@ -71,6 +71,16 @@ footer{
 /*Home CSS*/
 
 /*Gallery CSS*/
+#gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+#galleryimg{
+    margin-bottom: 32px;
+}
 
 /*Awards CSS*/
 #award{
@@ -95,3 +105,5 @@ footer{
 /*Skills CSS*/
 
 /*Contact CSS*/
+
+}
