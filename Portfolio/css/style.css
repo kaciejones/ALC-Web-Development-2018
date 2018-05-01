@@ -70,6 +70,12 @@ footer{
 
 /*Home CSS*/
 
+#imghome{
+    float: right;
+    margin: 4px;
+    width: 35%;
+}
+
 /*Gallery CSS*/
 #gallery{
     display: flex;
@@ -105,5 +111,21 @@ footer{
 /*Skills CSS*/
 
 /*Contact CSS*/
-
+@media only screen and (max-width: 320px){
+    #container{
+        width: 319px;
+        max-width: auto;
+        min-width: inherit;
+    }
+    
+    #award{
+        flex-direction: column;
+    }
+    #imghome{
+        float: none;
+        width: auto;
+    }
+    nav ul{
+        flex-direction: column;
+    }
 }
