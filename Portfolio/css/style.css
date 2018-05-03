@@ -8,7 +8,7 @@ body{
     height: auto;
     height: 100%;
     min-height: 100%;
-    background-color: lightgrey;
+    background-color: #fff;
     display: flex;
     justify-content: center;
 }
@@ -16,34 +16,42 @@ body{
 #container{
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: #f4f3f3;
     width: 90%;
     max-width: 1240px;
     min-width: 900px;
+    margin-top: 8px;
+    color: #373737;
     
 }
 
 #title{
     padding: 20px;
     text-align: center;
+    background: #f4f4;
+    color: #373737;
+    font-family: 'Gloria Hallelujah', cursive;
+    padding: 0px;
+    font-size: 50px;
 }
 
 nav{
-    background: 000;
+    background: #F5ebe3;
 }
 
 nav ul{
     display: flex;
     list-style-type: none;
-    background-color: #f1f1f1;
+    background-color: #dcd0c0;
+    border-bottom: 4px dotted #c0b283;
     
 }
 
 nav ul li{
     flex:1;
     text-align: center;
-    color: gray;
-    padding: 8px;
+    padding: 4px;
+    border-top: 4px dotted #c0b283;
     
 }
 
@@ -51,6 +59,9 @@ nav ul li a{
     display: block;
     text-decoration: none;
     color: black;
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+    
 }
 
 #content{
@@ -61,16 +72,23 @@ nav ul li a{
 
 #content h1{
     text-align: center;
-    padding-bottom: 4px;
+    padding-bottom: 8px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
 }
 
 footer{
-    text-align: center
+    text-align: center;
+    background-color: #dcd0c0;
+    border-top: 4px dotted #c0b283;
+    font-family: 'Amatic SC', cursive;
+    font-size: 20px;
 }
 
 /*Home CSS*/
 
 #imghome{
+    justify-content: center;
     float: right;
     margin: 4px;
     width: 35%;
@@ -116,6 +134,15 @@ footer{
         width: 319px;
         max-width: auto;
         min-width: inherit;
+        margin-top: 0px;
+    }
+    
+    #title{
+        font-size: 35px;
+    }
+    
+    h1{
+        font-size: 20px;    
     }
     
     #award{
@@ -123,7 +150,9 @@ footer{
     }
     #imghome{
         float: none;
+        max-width: 275px;
         width: auto;
+        float: left;
     }
     nav ul{
         flex-direction: column;
