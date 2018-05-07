@@ -16,12 +16,14 @@ body{
 #container{
     display: flex;
     flex-direction: column;
-    background-color: #f4f3f3;
+    background-color: #f4f3f4;
     width: 90%;
     max-width: 1240px;
     min-width: 900px;
     margin-top: 8px;
     color: #373737;
+    border-bottom: 4px dotted #c0b283;
+    border-radius: 25px;
     
 }
 
@@ -64,6 +66,11 @@ nav ul li a{
     
 }
 
+nav ul li:hover{
+    background-color: #c0b283;
+    border-radius: 10px;
+}
+
 #content{
     padding: 8px;
     margin: 8px;
@@ -83,6 +90,8 @@ footer{
     border-top: 4px dotted #c0b283;
     font-family: 'Amatic SC', cursive;
     font-size: 20px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 /*Home CSS*/
@@ -92,6 +101,7 @@ footer{
     float: right;
     margin: 4px;
     width: 35%;
+    border-radius: 15px;
 }
 
 /*Gallery CSS*/
@@ -100,17 +110,21 @@ footer{
     flex-wrap: wrap;
     justify-content: center;
     justify-content: space-around;
+    
 }
 
 #galleryimg{
     margin-bottom: 32px;
+    border-radius: 15px;
 }
 
 /*Awards CSS*/
 #award{
     display: flex;
-    box-shadow: 2px 2px 20px black;
+    box-shadow: 2px 2px 10px lightgray;
     margin-bottom: 24px;
+    background-color: #ffffff;
+    border-radius: 15px;
     
 }
 
@@ -118,6 +132,7 @@ footer{
     margin: 8px;
     border-style: solid;
     border-width: 2px;
+    border-radius: 10px;
     
 }
 
@@ -129,9 +144,38 @@ footer{
 /*Skills CSS*/
 
 /*Contact CSS*/
-@media only screen and (max-width: 320px){
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #dcd0c0;
+    color: #373737 ;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    background-color: #c0b283;
+}
+
+#contact{
+    padding: 8px;
+}
+
+
+@media only screen and (max-width: 500px){
     #container{
-        width: 319px;
+        width: 100%;
         max-width: auto;
         min-width: inherit;
         margin-top: 0px;
@@ -150,8 +194,7 @@ footer{
     }
     #imghome{
         float: none;
-        max-width: 275px;
-        width: auto;
+        width: 100%;
         float: left;
     }
     nav ul{
