@@ -170,15 +170,15 @@ footer{
     border-bottom-left-radius: 15px;
 }
 
-.html{ width: 70%; background-color: #c0b283;}
-.css{ width: 65%; background-color: #c0b283;}
-.javascript{ width: 20%; background-color: #c0b283;}
-.csharp{ width: 40%; background-color: #c0b283;}
-.inventor{ width: 50%; background-color: #c0b283;}
-.floral{ width: 99%; background-color: #c0b283;border-radius: 15px;}
-.mechanics{ width: 25%; background-color: #c0b283;}
-.greenhouse{ width: 99%; background-color: #c0b283;border-radius: 15px;}
-.photography{ width: 80%; background-color: #c0b283;}
+.html{ width: 70%; background-color: #E0D9C1;}
+.css{ width: 65%; background-color: #D9D1B5;}
+.javascript{ width: 20%; background-color: #D3C9A8;}
+.csharp{ width: 40%; background-color: #CDC19C;}
+.inventor{ width: 50%; background-color: #C6BA8F;}
+.floral{ width: 99%; background-color: #C0B283;border-radius: 15px;}
+.mechanics{ width: 25%; background-color: #C0B283;}
+.greenhouse{ width: 99%; background-color: #ADA076;border-radius: 15px;}
+.photography{ width: 80%; background-color: #9A8E69;}
 /*Contact CSS*/
 input[type=text], select, textarea{
     width: 100%;
@@ -232,6 +232,9 @@ input[type=submit]:hover{
     .award{
         flex-direction: column;
         width: 100%;
+    }
+    #awardimg{
+        width: auto
     }
     #imghome{
         float: none;
