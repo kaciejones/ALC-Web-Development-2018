@@ -133,8 +133,9 @@ footer{
     
 }
 
-#awardimg{
+.awardimg{
     margin: 8px;
+    max-width: 220px;
     border-style: solid;
     border-width: 2px;
     border-radius: 10px;
@@ -233,8 +234,12 @@ input[type=submit]:hover{
         flex-direction: column;
         width: 100%;
     }
-    #awardimg{
-        width: auto
+    figure{
+        margin-left: 15%;
+    }
+    .awardimg{
+        width: auto;
+        justify-content: space-around;
     }
     #imghome{
         float: none;
