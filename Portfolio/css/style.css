@@ -29,11 +29,12 @@ body{
 #title{
     padding: 20px;
     text-align: center;
-    background: #f4f4;
+    background-color: #f4f4f4;
     color: #373737;
     font-family: 'Gloria Hallelujah', cursive;
     padding: 0px;
     font-size: 50px;
+    border-radius: 25px;
 }
 
 nav{
@@ -146,13 +147,13 @@ footer{
     
 }
 
-#description{
+.description{
     display: flex;
     flex-direction: column;
     margin: 8px;
 }
 
-#description h4{
+.description h4{
     padding: 4px 0px;
 }
 /*Skills CSS*/
