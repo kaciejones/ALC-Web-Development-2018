@@ -112,11 +112,15 @@ footer{
     
 }
 
-#galleryimg{
+.galleryimg{
     margin-bottom: 32px;
-    border-radius: 15px;
+    text-align: center;
 }
 
+.galleryimg img{
+    max-width: 275px;
+    border-radius: 15px;
+}
 /*Awards CSS*/
 #awards{
     display: flex;
@@ -248,5 +252,9 @@ input[type=submit]:hover{
     }
     nav ul{
         flex-direction: column;
+    }
+    
+    .modalcontent{
+        width: 100%;
     }
 }
